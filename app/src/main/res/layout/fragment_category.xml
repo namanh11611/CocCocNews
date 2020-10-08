@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.namanh.coccocnews.ui.category.CategoryViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorBackground">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_article"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorBackground"
+            android:clipToPadding="false"
+            android:paddingVertical="@dimen/article_padding_vertical" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_dark_mode"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginEnd="@dimen/button_margin_end"
+            android:layout_marginBottom="@dimen/button_margin_bottom"
+            android:backgroundTint="?attr/colorButton"
+            android:elevation="@dimen/button_elevation"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            app:cornerRadius="@dimen/button_corner_radius"
+            app:icon="@drawable/ic_dark"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/text_no_connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/article_padding"
+            android:fontFamily="@font/roboto"
+            android:text="@string/please_check_internet_connect"
+            android:textColor="?attr/colorTextPrimary"
+            android:textSize="@dimen/article_text_title_size"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_reconnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/article_padding"
+            android:fontFamily="@font/roboto"
+            android:text="@string/button_reconnect"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_no_connect" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

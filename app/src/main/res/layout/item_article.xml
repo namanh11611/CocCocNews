@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.namanh.coccocnews.ui.category.ArticleViewModel" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/article_padding"
+        android:layout_marginVertical="@dimen/article_padding_vertical"
+        android:background="?attr/colorBackground"
+        app:cardCornerRadius="@dimen/article_radius"
+        app:cardElevation="@dimen/article_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorBackground"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="@{() -> viewModel.onClickArticle()}"
+            android:padding="@dimen/article_padding">
+
+            <ImageView
+                android:id="@+id/image_article"
+                android:layout_width="@dimen/article_image_size"
+                android:layout_height="@dimen/article_image_size"
+                app:imageRoundRadiusUrl="@{viewModel.mImageUrl}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/article_padding"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="?attr/colorTextPrimary"
+                android:textSize="@dimen/article_text_title_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image_article"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/article_text_description_margin"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto"
+                android:maxLines="2"
+                android:textColor="?attr/colorTextPrimary"
+                android:textSize="@dimen/article_text_description_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/text_title"
+                app:layout_constraintTop_toBottomOf="@id/text_title" />
+
+            <TextView
+                android:id="@+id/text_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/article_text_time_margin"
+                android:fontFamily="@font/roboto_italic"
+                android:textColor="?attr/colorTextSecondary"
+                android:textSize="@dimen/article_text_time_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/text_title"
+                app:layout_constraintTop_toBottomOf="@id/text_description"
+                app:layout_constraintVertical_bias="1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

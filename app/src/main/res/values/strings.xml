@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Cốc Cốc News</string>
+
+    <string name="please_check_internet_connect">Vui lòng kiểm tra lại kết nối Internet của bạn!</string>
+    <string name="notification_no_connect">Không tìm thấy kết nối Internet!</string>
+    <string name="button_reconnect">Tải lại</string>
+</resources>
